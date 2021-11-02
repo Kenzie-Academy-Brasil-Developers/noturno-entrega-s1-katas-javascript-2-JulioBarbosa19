@@ -8,7 +8,11 @@
 
 // comece a criar a sua função multiply na linha abaixo
  function multiply(numero1, numero2){
-     return numero1 * numero2;
+     let resultado = 0;
+     for(let i = 0; i < numero2; i++){
+         add(resultado, numero1);
+     }
+     return resultado;
  }
 
 // descomente a linha seguinte para testar sua função
@@ -17,7 +21,11 @@
 
 // comece a criar a sua função power na linha abaixo
 function power(numero1, numero2){
-    return numero1 ** numero2;
+    let resultado = 1;
+    for(let i = 0; i < numero2; i++){
+        resultado = multiply(resultado, numero1);
+    }
+    return resultado;
 }
 
 // descomente a linha seguinte para testar sua função
@@ -26,16 +34,13 @@ function power(numero1, numero2){
 
 // comece a criar a sua função factorial na linha abaixo
 function factorial(numero){
-    if(numero === 0 || numero === 1){
-        return 1;
-    }
     let resultado = numero;
-    let primeiromulti = numero - 1;
-    for(let contador = primeiromulti; contador > 1; contador--){
-         numero = numero * contador;
+
+    for(let i = numero - 1; i > 0; i++){
+        resultado = multiply(resultado, i);
     }
 
-    return numero;
+    return resultado;
      
 }
 
