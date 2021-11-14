@@ -9,20 +9,21 @@
 // comece a criar a sua função multiply na linha abaixo
  function multiply(numero1, numero2){
      let resultado = 0;
-     for(let i = 0; i < numero2; i++){
-         add(resultado, numero1);
+
+     for(let i = 1; i <= numero1; i++){
+         resultado = add(resultado, numero2);
      }
      return resultado;
  }
 
 // descomente a linha seguinte para testar sua função
- console.assert(multiply(4, 6) === 24, 'A função multiply não está funcionando como esperado');
 
+console.assert(multiply(4, 6) === 24, 'A função multiply não está funcionando como esperado');
 
 // comece a criar a sua função power na linha abaixo
 function power(numero1, numero2){
     let resultado = 1;
-    for(let i = 0; i < numero2; i++){
+    for(let i = 0; i <= numero2; i++){
         resultado = multiply(resultado, numero1);
     }
     return resultado;
@@ -34,8 +35,8 @@ function power(numero1, numero2){
 
 // comece a criar a sua função factorial na linha abaixo
 function factorial(numero){
+    if(numero===0) return 1;
     let resultado = numero;
-
     for(let i = numero - 1; i > 0; i++){
         resultado = multiply(resultado, i);
     }
